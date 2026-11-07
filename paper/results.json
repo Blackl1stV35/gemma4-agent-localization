@@ -1,0 +1,1816 @@
+{
+ "coverage": {
+  "tasks": 129,
+  "usable": 124,
+  "with_seed": 90,
+  "seed_hits_gold": 44
+ },
+ "summary": {
+  "lexical_bm25": {
+   "mrr": 0.3597783694445729,
+   "r@1": 0.18412698412698414,
+   "r@5": 0.39494367639528927,
+   "r@10": 0.5389592933947773,
+   "r@25": 0.7801907322068613,
+   "tokens@10": 15501.274193548386
+  },
+  "seed_only": {
+   "mrr": 0.25369623655913975,
+   "r@1": 0.15837813620071686,
+   "r@5": 0.2762416794674859,
+   "r@10": 0.30536354326676907,
+   "r@25": 0.3062596006144393,
+   "tokens@10": 6761.096774193548
+  },
+  "graph_2hop": {
+   "mrr": 0.30256753041166834,
+   "r@1": 0.1837237583205325,
+   "r@5": 0.3284690220174091,
+   "r@10": 0.35355862775217617,
+   "r@25": 0.3988095238095238,
+   "tokens@10": 10703.604838709678
+  },
+  "embedding_seed": {
+   "mrr": 0.20243511269018746,
+   "r@1": 0.09075780849974398,
+   "r@5": 0.2633256528417819,
+   "r@10": 0.3355926779313876,
+   "r@25": 0.4321364567332309,
+   "tokens@10": 3250.6048387096776
+  },
+  "hybrid_rrf": {
+   "mrr": 0.37727400241027803,
+   "r@1": 0.22001408090117766,
+   "r@5": 0.44625576036866355,
+   "r@10": 0.573694316436252,
+   "r@25": 0.7792818740399385,
+   "tokens@10": 16066.870967741936
+  },
+  "hybrid_bm25_graph": {
+   "mrr": 0.38578529366522013,
+   "r@1": 0.21598182283666154,
+   "r@5": 0.4570532514080901,
+   "r@10": 0.5821044546851,
+   "r@25": 0.784447004608295,
+   "tokens@10": 19590.129032258064
+  }
+ },
+ "summary_seeded_only": {
+  "lexical_bm25": {
+   "mrr": 0.43535816048540843,
+   "r@1": 0.23146384479717813,
+   "r@5": 0.4663668430335096,
+   "r@10": 0.5993121693121692,
+   "r@25": 0.8169929453262786,
+   "tokens@10": 16355.81111111111
+  },
+  "seed_only": {
+   "mrr": 0.34953703703703703,
+   "r@1": 0.2182098765432099,
+   "r@5": 0.3805996472663139,
+   "r@10": 0.4207231040564374,
+   "r@25": 0.4219576719576719,
+   "tokens@10": 9315.288888888888
+  },
+  "graph_2hop": {
+   "mrr": 0.4168708196782986,
+   "r@1": 0.2531305114638448,
+   "r@5": 0.45255731922398595,
+   "r@10": 0.4871252204585538,
+   "r@25": 0.5494708994708994,
+   "tokens@10": 14747.18888888889
+  },
+  "embedding_seed": {
+   "mrr": 0.2789105997064806,
+   "r@1": 0.12504409171075836,
+   "r@5": 0.3628042328042328,
+   "r@10": 0.4623721340388007,
+   "r@25": 0.5953880070546738,
+   "tokens@10": 4478.611111111111
+  },
+  "hybrid_rrf": {
+   "mrr": 0.45946325479371336,
+   "r@1": 0.2809082892416226,
+   "r@5": 0.5370634920634921,
+   "r@10": 0.6471693121693122,
+   "r@25": 0.8157407407407407,
+   "tokens@10": 17135.077777777777
+  },
+  "hybrid_bm25_graph": {
+   "mrr": 0.4711899227449668,
+   "r@1": 0.275352733686067,
+   "r@5": 0.5519400352733685,
+   "r@10": 0.6587566137566138,
+   "r@25": 0.8228571428571427,
+   "tokens@10": 21989.344444444443
+  }
+ },
+ "per_task": [
+  {
+   "id": "fastapi_15588",
+   "gold": [
+    "fastapi/sse.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 8,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "fastapi_15589",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 31,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 22,
+   "hybrid_rrf": 52,
+   "hybrid_bm25_graph": 36
+  },
+  {
+   "id": "fastapi_15030",
+   "gold": [
+    "fastapi/openapi/utils.py",
+    "fastapi/responses.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": 48,
+   "embedding_seed": 5,
+   "hybrid_rrf": 8,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "fastapi_14962",
+   "gold": [
+    "fastapi/_compat/v2.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 7,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 7,
+   "hybrid_bm25_graph": 7
+  },
+  {
+   "id": "fastapi_15280",
+   "gold": [
+    "fastapi/applications.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "fastapi_14964",
+   "gold": [
+    "fastapi/responses.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 1,
+   "seed_only": 2,
+   "graph_2hop": 2,
+   "embedding_seed": 42,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_15023",
+   "gold": [
+    "docs_src/stream_data/tutorial002_py310.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 5,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "fastapi_14986",
+   "gold": [
+    "fastapi/applications.py",
+    "fastapi/openapi/docs.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": 5,
+   "embedding_seed": 65,
+   "hybrid_rrf": 7,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "fastapi_14978",
+   "gold": [
+    "fastapi/applications.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 168,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 168,
+   "hybrid_bm25_graph": 168
+  },
+  {
+   "id": "requests_7505",
+   "gold": [
+    "src/requests/_types.py",
+    "src/requests/models.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "requests_7502",
+   "gold": [
+    "src/requests/models.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 3,
+   "seed_only": 3,
+   "graph_2hop": 1,
+   "embedding_seed": 4,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "requests_7433",
+   "gold": [
+    "src/requests/models.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 1,
+   "seed_only": 2,
+   "graph_2hop": 1,
+   "embedding_seed": 7,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "requests_7427",
+   "gold": [
+    "src/requests/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 8,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "requests_7315",
+   "gold": [
+    "src/requests/adapters.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 4,
+   "seed_only": 5,
+   "graph_2hop": 2,
+   "embedding_seed": 3,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "requests_7328",
+   "gold": [
+    "src/requests/sessions.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": 7,
+   "embedding_seed": 2,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 8
+  },
+  {
+   "id": "requests_7309",
+   "gold": [
+    "src/requests/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 2,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "requests_7205",
+   "gold": [
+    "src/requests/utils.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 3,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 8
+  },
+  {
+   "id": "rich_4070",
+   "gold": [
+    "rich/_emoji_replace.py",
+    "rich/console.py",
+    "rich/emoji.py",
+    "rich/logging.py",
+    "rich/protocol.py",
+    "rich/repr.py",
+    "rich/segment.py",
+    "rich/syntax.py",
+    "rich/theme.py"
+   ],
+   "n_seeds": 17,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_4077",
+   "gold": [
+    "rich/file_proxy.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 21,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 21,
+   "hybrid_bm25_graph": 21
+  },
+  {
+   "id": "rich_4079",
+   "gold": [
+    "rich/markdown.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 17,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 17,
+   "hybrid_bm25_graph": 17
+  },
+  {
+   "id": "rich_4076",
+   "gold": [
+    "rich/ansi.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 89,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 89,
+   "hybrid_bm25_graph": 89
+  },
+  {
+   "id": "rich_4075",
+   "gold": [
+    "rich/console.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 15,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 15,
+   "hybrid_bm25_graph": 15
+  },
+  {
+   "id": "rich_4006",
+   "gold": [
+    "rich/cells.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 15,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "fastapi_14258",
+   "gold": [
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14851",
+   "gold": [
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 2,
+   "seed_only": 3,
+   "graph_2hop": 3,
+   "embedding_seed": 2,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "fastapi_14873",
+   "gold": [
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 2,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_13920",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 36,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 36,
+   "hybrid_bm25_graph": 36
+  },
+  {
+   "id": "fastapi_14794",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 7,
+   "lexical_bm25": 1,
+   "seed_only": 4,
+   "graph_2hop": 1,
+   "embedding_seed": 29,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14786",
+   "gold": [
+    "fastapi/security/utils.py"
+   ],
+   "n_seeds": 8,
+   "lexical_bm25": 30,
+   "seed_only": 6,
+   "graph_2hop": 6,
+   "embedding_seed": null,
+   "hybrid_rrf": 12,
+   "hybrid_bm25_graph": 6
+  },
+  {
+   "id": "fastapi_14479",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 14,
+   "lexical_bm25": 1,
+   "seed_only": 5,
+   "graph_2hop": 2,
+   "embedding_seed": 17,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14463",
+   "gold": [
+    "fastapi/openapi/utils.py"
+   ],
+   "n_seeds": 15,
+   "lexical_bm25": 34,
+   "seed_only": null,
+   "graph_2hop": 13,
+   "embedding_seed": 90,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 3
+  },
+  {
+   "id": "fastapi_12942",
+   "gold": [
+    "fastapi/_compat.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 8,
+   "seed_only": null,
+   "graph_2hop": 36,
+   "embedding_seed": 1,
+   "hybrid_rrf": 10,
+   "hybrid_bm25_graph": 28
+  },
+  {
+   "id": "fastapi_14099",
+   "gold": [
+    "fastapi/applications.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 9,
+   "seed_only": 2,
+   "graph_2hop": 2,
+   "embedding_seed": 6,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 3
+  },
+  {
+   "id": "fastapi_14609",
+   "gold": [
+    "docs_src/request_form_models/tutorial002_pv1_an_py39.py",
+    "docs_src/request_form_models/tutorial002_pv1_py39.py",
+    "fastapi/_compat/__init__.py",
+    "fastapi/_compat/main.py",
+    "fastapi/_compat/may_v1.py",
+    "fastapi/_compat/model_field.py",
+    "fastapi/_compat/shared.py",
+    "fastapi/_compat/v1.py",
+    "fastapi/_compat/v2.py",
+    "fastapi/datastructures.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/encoders.py",
+    "fastapi/exceptions.py",
+    "fastapi/openapi/models.py",
+    "fastapi/openapi/utils.py",
+    "fastapi/param_functions.py",
+    "fastapi/params.py",
+    "fastapi/routing.py",
+    "fastapi/temp_pydantic_v1_params.py",
+    "fastapi/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": 41,
+   "embedding_seed": 2,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 8
+  },
+  {
+   "id": "fastapi_14372",
+   "gold": [
+    "fastapi/dependencies/utils.py",
+    "fastapi/params.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 29,
+   "seed_only": 2,
+   "graph_2hop": 2,
+   "embedding_seed": 1,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "fastapi_14349",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 3,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 74,
+   "hybrid_rrf": 7,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "fastapi_14512",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 9,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 7,
+   "hybrid_rrf": 19,
+   "hybrid_bm25_graph": 20
+  },
+  {
+   "id": "fastapi_11355",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 28,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 28,
+   "hybrid_bm25_graph": 28
+  },
+  {
+   "id": "fastapi_14485",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 49,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 49,
+   "hybrid_bm25_graph": 49
+  },
+  {
+   "id": "fastapi_14482",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 6,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 6,
+   "hybrid_bm25_graph": 6
+  },
+  {
+   "id": "fastapi_14306",
+   "gold": [
+    "fastapi/exceptions.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 12,
+   "lexical_bm25": 5,
+   "seed_only": 4,
+   "graph_2hop": 1,
+   "embedding_seed": 2,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14458",
+   "gold": [
+    "fastapi/dependencies/models.py"
+   ],
+   "n_seeds": 6,
+   "lexical_bm25": 1,
+   "seed_only": 3,
+   "graph_2hop": 2,
+   "embedding_seed": 2,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14459",
+   "gold": [
+    "fastapi/dependencies/models.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/openapi/utils.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 12,
+   "seed_only": null,
+   "graph_2hop": 4,
+   "embedding_seed": 25,
+   "hybrid_rrf": 13,
+   "hybrid_bm25_graph": 10
+  },
+  {
+   "id": "fastapi_14448",
+   "gold": [
+    "fastapi/dependencies/models.py",
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 18,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 66,
+   "hybrid_bm25_graph": 18
+  },
+  {
+   "id": "fastapi_14455",
+   "gold": [
+    "fastapi/openapi/utils.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 47,
+   "seed_only": null,
+   "graph_2hop": 3,
+   "embedding_seed": null,
+   "hybrid_rrf": 16,
+   "hybrid_bm25_graph": 13
+  },
+  {
+   "id": "fastapi_9753",
+   "gold": [
+    "fastapi/dependencies/models.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 23,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 23,
+   "hybrid_bm25_graph": 23
+  },
+  {
+   "id": "fastapi_14430",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 11,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 11,
+   "hybrid_bm25_graph": 11
+  },
+  {
+   "id": "fastapi_5077",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 8,
+   "lexical_bm25": 1,
+   "seed_only": 3,
+   "graph_2hop": 1,
+   "embedding_seed": 2,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_9555",
+   "gold": [
+    "fastapi/dependencies/models.py"
+   ],
+   "n_seeds": 8,
+   "lexical_bm25": 8,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 85,
+   "hybrid_rrf": 37,
+   "hybrid_bm25_graph": 23
+  },
+  {
+   "id": "fastapi_14361",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "fastapi_13207",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 9,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 4,
+   "hybrid_rrf": 17,
+   "hybrid_bm25_graph": 23
+  },
+  {
+   "id": "fastapi_14360",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 3,
+   "hybrid_rrf": 12,
+   "hybrid_bm25_graph": 12
+  },
+  {
+   "id": "fastapi_14356",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 10,
+   "lexical_bm25": 11,
+   "seed_only": null,
+   "graph_2hop": 48,
+   "embedding_seed": 4,
+   "hybrid_rrf": 13,
+   "hybrid_bm25_graph": 27
+  },
+  {
+   "id": "fastapi_5624",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 5,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "fastapi_14419",
+   "gold": [
+    "fastapi/dependencies/models.py",
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 5,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 50,
+   "hybrid_rrf": 13,
+   "hybrid_bm25_graph": 7
+  },
+  {
+   "id": "fastapi_14301",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 11,
+   "lexical_bm25": 1,
+   "seed_only": 8,
+   "graph_2hop": 2,
+   "embedding_seed": 6,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14262",
+   "gold": [
+    "fastapi/dependencies/models.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/exceptions.py",
+    "fastapi/param_functions.py",
+    "fastapi/params.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 8,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 19,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14266",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 16,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 15,
+   "hybrid_rrf": 31,
+   "hybrid_bm25_graph": 19
+  },
+  {
+   "id": "fastapi_14246",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 4,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "fastapi_14186",
+   "gold": [
+    "fastapi/_compat/__init__.py",
+    "fastapi/_compat/main.py",
+    "fastapi/_compat/shared.py",
+    "fastapi/_compat/v1.py",
+    "fastapi/_compat/v2.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/encoders.py",
+    "fastapi/temp_pydantic_v1_params.py",
+    "fastapi/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 3,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 22,
+   "hybrid_rrf": 9,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "fastapi_9425",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 4,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 3,
+   "hybrid_rrf": 10,
+   "hybrid_bm25_graph": 8
+  },
+  {
+   "id": "fastapi_13713",
+   "gold": [
+    "fastapi/applications.py",
+    "fastapi/openapi/utils.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 3,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": null,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14077",
+   "gold": [
+    "docs_src/handling_errors/tutorial005.py",
+    "fastapi/openapi/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 34,
+   "seed_only": null,
+   "graph_2hop": 27,
+   "embedding_seed": 10,
+   "hybrid_rrf": 17,
+   "hybrid_bm25_graph": 54
+  },
+  {
+   "id": "rich_3718",
+   "gold": [
+    "rich/panel.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 21,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 57,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "rich_3934",
+   "gold": [
+    "rich/live.py",
+    "rich/live_render.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 16,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 16,
+   "hybrid_bm25_graph": 16
+  },
+  {
+   "id": "rich_3953",
+   "gold": [
+    "rich/cells.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": null,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": null,
+   "hybrid_bm25_graph": null
+  },
+  {
+   "id": "rich_3944",
+   "gold": [
+    "rich/cells.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": null,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": null,
+   "hybrid_bm25_graph": null
+  },
+  {
+   "id": "rich_3942",
+   "gold": [
+    "rich/markdown.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 2,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3938",
+   "gold": [
+    "rich/console.py",
+    "rich/segment.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 20,
+   "seed_only": null,
+   "graph_2hop": 22,
+   "embedding_seed": 4,
+   "hybrid_rrf": 32,
+   "hybrid_bm25_graph": 38
+  },
+  {
+   "id": "rich_3882",
+   "gold": [
+    "rich/prompt.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": 64,
+   "embedding_seed": 19,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "rich_3894",
+   "gold": [
+    "rich/_inspect.py"
+   ],
+   "n_seeds": 10,
+   "lexical_bm25": 3,
+   "seed_only": null,
+   "graph_2hop": 17,
+   "embedding_seed": 16,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "rich_3935",
+   "gold": [
+    "rich/table.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 18,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 77,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3905",
+   "gold": [
+    "rich/progress.py"
+   ],
+   "n_seeds": 16,
+   "lexical_bm25": 5,
+   "seed_only": 2,
+   "graph_2hop": 1,
+   "embedding_seed": 3,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3930",
+   "gold": [
+    "rich/__main__.py",
+    "rich/cells.py"
+   ],
+   "n_seeds": 7,
+   "lexical_bm25": 16,
+   "seed_only": null,
+   "graph_2hop": 20,
+   "embedding_seed": 7,
+   "hybrid_rrf": 24,
+   "hybrid_bm25_graph": 16
+  },
+  {
+   "id": "httpx_3672",
+   "gold": [
+    "src/ahttpx/_parsers.py",
+    "src/ahttpx/_pool.py",
+    "src/ahttpx/_server.py",
+    "src/httpx/_network.py",
+    "src/httpx/_parsers.py",
+    "src/httpx/_pool.py",
+    "src/httpx/_server.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 1,
+   "seed_only": 2,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14791",
+   "gold": [
+    "fastapi/openapi/utils.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 30,
+   "seed_only": null,
+   "graph_2hop": 4,
+   "embedding_seed": 47,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 5
+  },
+  {
+   "id": "fastapi_15800",
+   "gold": [
+    "fastapi/applications.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 9,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 44,
+   "hybrid_rrf": 16,
+   "hybrid_bm25_graph": 10
+  },
+  {
+   "id": "fastapi_15785",
+   "gold": [
+    "fastapi/openapi/utils.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 44,
+   "hybrid_rrf": 6,
+   "hybrid_bm25_graph": 3
+  },
+  {
+   "id": "fastapi_14371",
+   "gold": [
+    "fastapi/_compat/v2.py",
+    "fastapi/dependencies/utils.py",
+    "fastapi/openapi/utils.py",
+    "fastapi/params.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 9,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 9,
+   "hybrid_bm25_graph": 9
+  },
+  {
+   "id": "fastapi_14605",
+   "gold": [
+    "fastapi/dependencies/utils.py",
+    "fastapi/exceptions.py",
+    "fastapi/openapi/utils.py",
+    "fastapi/params.py",
+    "fastapi/routing.py",
+    "fastapi/temp_pydantic_v1_params.py",
+    "fastapi/utils.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 6,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 6,
+   "hybrid_bm25_graph": 6
+  },
+  {
+   "id": "fastapi_15763",
+   "gold": [
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 3,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 44,
+   "hybrid_rrf": 9,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "fastapi_14583",
+   "gold": [
+    "fastapi/dependencies/utils.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 27,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 27,
+   "hybrid_bm25_graph": 27
+  },
+  {
+   "id": "fastapi_15745",
+   "gold": [
+    "docs_src/path_operation_advanced_configuration/tutorial002_py310.py",
+    "fastapi/applications.py",
+    "fastapi/openapi/utils.py",
+    "fastapi/routing.py"
+   ],
+   "n_seeds": 8,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 10,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14297",
+   "gold": [
+    "fastapi/_compat/v2.py"
+   ],
+   "n_seeds": 11,
+   "lexical_bm25": 1,
+   "seed_only": 10,
+   "graph_2hop": 5,
+   "embedding_seed": 4,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 3
+  },
+  {
+   "id": "fastapi_14303",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 10,
+   "lexical_bm25": 3,
+   "seed_only": null,
+   "graph_2hop": 48,
+   "embedding_seed": 4,
+   "hybrid_rrf": 7,
+   "hybrid_bm25_graph": 21
+  },
+  {
+   "id": "fastapi_13537",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": null,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14953",
+   "gold": [
+    "fastapi/_compat/v2.py",
+    "fastapi/datastructures.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 10,
+   "seed_only": null,
+   "graph_2hop": 5,
+   "embedding_seed": 32,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 13
+  },
+  {
+   "id": "fastapi_13786",
+   "gold": [
+    "docs_src/security/tutorial003.py",
+    "docs_src/security/tutorial003_an.py",
+    "docs_src/security/tutorial003_an_py310.py",
+    "docs_src/security/tutorial003_an_py39.py",
+    "docs_src/security/tutorial003_py310.py",
+    "fastapi/security/api_key.py",
+    "fastapi/security/http.py",
+    "fastapi/security/oauth2.py",
+    "fastapi/security/open_id_connect_url.py"
+   ],
+   "n_seeds": 20,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 4,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "fastapi_14616",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 4,
+   "seed_only": null,
+   "graph_2hop": 52,
+   "embedding_seed": 2,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 13
+  },
+  {
+   "id": "fastapi_11194",
+   "gold": [
+    "fastapi/dependencies/utils.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 18,
+   "seed_only": null,
+   "graph_2hop": 4,
+   "embedding_seed": 3,
+   "hybrid_rrf": 7,
+   "hybrid_bm25_graph": 6
+  },
+  {
+   "id": "requests_6757",
+   "gold": [
+    "src/requests/compat.py",
+    "src/requests/utils.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 13,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 13,
+   "hybrid_bm25_graph": 13
+  },
+  {
+   "id": "requests_6629",
+   "gold": [
+    "src/requests/exceptions.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "requests_6644",
+   "gold": [
+    "src/requests/adapters.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 17,
+   "hybrid_rrf": 14,
+   "hybrid_bm25_graph": 9
+  },
+  {
+   "id": "requests_6589",
+   "gold": [
+    "src/requests/utils.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 2,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 3
+  },
+  {
+   "id": "requests_6592",
+   "gold": [
+    "src/requests/status_codes.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 1,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3180",
+   "gold": [
+    "rich/_wrap.py",
+    "rich/cells.py"
+   ],
+   "n_seeds": 8,
+   "lexical_bm25": 11,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 56,
+   "hybrid_rrf": 61,
+   "hybrid_bm25_graph": 37
+  },
+  {
+   "id": "rich_3486",
+   "gold": [
+    "rich/syntax.py",
+    "rich/traceback.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 2,
+   "seed_only": 1,
+   "graph_2hop": 2,
+   "embedding_seed": 16,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "rich_3777",
+   "gold": [
+    "rich/console.py",
+    "rich/diagnose.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 2,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 3,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3468",
+   "gold": [
+    "rich/console.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 13,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 5,
+   "hybrid_rrf": 14,
+   "hybrid_bm25_graph": 16
+  },
+  {
+   "id": "rich_3782",
+   "gold": [
+    "rich/syntax.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 12,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 6,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "rich_3772",
+   "gold": [
+    "rich/traceback.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 15,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 15,
+   "hybrid_bm25_graph": 15
+  },
+  {
+   "id": "rich_3296",
+   "gold": [
+    "rich/syntax.py"
+   ],
+   "n_seeds": 6,
+   "lexical_bm25": 11,
+   "seed_only": null,
+   "graph_2hop": 11,
+   "embedding_seed": 4,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "rich_3675",
+   "gold": [
+    "rich/console.py",
+    "rich/diagnose.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 12,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 12,
+   "hybrid_bm25_graph": 12
+  },
+  {
+   "id": "rich_3676",
+   "gold": [
+    "rich/traceback.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 9,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 9,
+   "hybrid_bm25_graph": 9
+  },
+  {
+   "id": "rich_3518",
+   "gold": [
+    "rich/table.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 14,
+   "hybrid_rrf": 2,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3535",
+   "gold": [
+    "rich/cells.py",
+    "rich/segment.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 2,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 5,
+   "hybrid_rrf": 14,
+   "hybrid_bm25_graph": 9
+  },
+  {
+   "id": "rich_3521",
+   "gold": [
+    "rich/segment.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 10,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 10,
+   "hybrid_bm25_graph": 10
+  },
+  {
+   "id": "rich_3506",
+   "gold": [
+    "rich/segment.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 10,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 33,
+   "hybrid_rrf": 46,
+   "hybrid_bm25_graph": 28
+  },
+  {
+   "id": "rich_3480",
+   "gold": [
+    "rich/text.py"
+   ],
+   "n_seeds": 3,
+   "lexical_bm25": 24,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 8,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 3
+  },
+  {
+   "id": "rich_3472",
+   "gold": [
+    "rich/pretty.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 10,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 10,
+   "hybrid_bm25_graph": 10
+  },
+  {
+   "id": "rich_3454",
+   "gold": [
+    "rich/highlighter.py"
+   ],
+   "n_seeds": 5,
+   "lexical_bm25": 11,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 8,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3471",
+   "gold": [
+    "rich/text.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 8,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3470",
+   "gold": [
+    "rich/console.py"
+   ],
+   "n_seeds": 1,
+   "lexical_bm25": 10,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 1,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3469",
+   "gold": [
+    "rich/markdown.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 28,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 28,
+   "hybrid_bm25_graph": 28
+  },
+  {
+   "id": "rich_3052",
+   "gold": [
+    "rich/prompt.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 4,
+   "embedding_seed": 31,
+   "hybrid_rrf": 3,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3278",
+   "gold": [
+    "rich/ansi.py"
+   ],
+   "n_seeds": 7,
+   "lexical_bm25": 11,
+   "seed_only": null,
+   "graph_2hop": 43,
+   "embedding_seed": 42,
+   "hybrid_rrf": 6,
+   "hybrid_bm25_graph": 4
+  },
+  {
+   "id": "rich_2943",
+   "gold": [
+    "rich/style.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 14,
+   "seed_only": 2,
+   "graph_2hop": 2,
+   "embedding_seed": 17,
+   "hybrid_rrf": 5,
+   "hybrid_bm25_graph": 2
+  },
+  {
+   "id": "rich_2725",
+   "gold": [
+    "rich/table.py"
+   ],
+   "n_seeds": 6,
+   "lexical_bm25": 8,
+   "seed_only": null,
+   "graph_2hop": 13,
+   "embedding_seed": 31,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3130",
+   "gold": [
+    "rich/markdown.py"
+   ],
+   "n_seeds": 6,
+   "lexical_bm25": 1,
+   "seed_only": 1,
+   "graph_2hop": 1,
+   "embedding_seed": 29,
+   "hybrid_rrf": 1,
+   "hybrid_bm25_graph": 1
+  },
+  {
+   "id": "rich_3067",
+   "gold": [
+    "rich/highlighter.py"
+   ],
+   "n_seeds": 2,
+   "lexical_bm25": 25,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": 1,
+   "hybrid_rrf": 19,
+   "hybrid_bm25_graph": 43
+  },
+  {
+   "id": "rich_3006",
+   "gold": [
+    "rich/repr.py"
+   ],
+   "n_seeds": 6,
+   "lexical_bm25": 11,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 37,
+   "hybrid_bm25_graph": 22
+  },
+  {
+   "id": "rich_3064",
+   "gold": [
+    "rich/markdown.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": 9,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": 9,
+   "hybrid_bm25_graph": 9
+  },
+  {
+   "id": "rich_3063",
+   "gold": [
+    "rich/markup.py"
+   ],
+   "n_seeds": 0,
+   "lexical_bm25": null,
+   "seed_only": null,
+   "graph_2hop": null,
+   "embedding_seed": null,
+   "hybrid_rrf": null,
+   "hybrid_bm25_graph": null
+  },
+  {
+   "id": "rich_3061",
+   "gold": [
+    "rich/text.py"
+   ],
+   "n_seeds": 4,
+   "lexical_bm25": 7,
+   "seed_only": 3,
+   "graph_2hop": 3,
+   "embedding_seed": 27,
+   "hybrid_rrf": 4,
+   "hybrid_bm25_graph": 2
+  }
+ ]
+}
