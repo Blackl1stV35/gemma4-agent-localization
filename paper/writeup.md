@@ -4,7 +4,7 @@
 
 ## Abstract
 
-Small coding agents that run offline on consumer hardware have to find the right files inside a context window of 32,768 tokens. The Gemma 4 Developer Agent Competition gives every agent three code-intelligence tools (a neighbor lookup, a subgraph lookup, and a symbol-similarity search) backed by a precomputed call graph and per-symbol embeddings. We ask a practical question that a prompt author must answer before the agent runs: which of these signals should the agent trust to reach the files that a correct patch edits? We build a localization benchmark from the 129 training tasks, using the files edited by each reference patch as labels, and compare six retrieval strategies: BM25 over the issue text, the symbol named in the issue ("seed"), a two-hop graph expansion from the seed, embedding similarity to the seed, and two rank-fusion hybrids. On the 124 tasks whose gold files exist in the graph, BM25 alone reaches a mean reciprocal rank (MRR) of 0.360 (95% CI 0.295 to 0.428). Adding the graph raises it to 0.386, but the paired difference of +0.026 has a 95% interval of -0.034 to +0.086, so we cannot claim a gain. Graph expansion does beat the bare seed (+0.049, interval +0.017 to +0.082), and embedding similarity is clearly worse than graph expansion (-0.100, interval -0.167 to -0.033). The best signal depends on the repository: BM25 leads on FastAPI (0.389 against 0.218 for the graph), while seeded methods lead on Rich (0.347 and 0.381 against 0.218). Returning the full text of ten BM25 hits costs about 15,500 tokens, close to half the window. We release the scripts, per-task results, and the figure so that the study can be repeated in one command.
+Small coding agents that run offline on consumer hardware have to find the right files inside a context window of 32,768 tokens. The Gemma 4 Developer Agent Competition gives every agent three code-intelligence tools (a neighbor lookup, a subgraph lookup, and a symbol-similarity search) backed by a precomputed call graph and per-symbol embeddings. We ask a practical question that a prompt author must answer before the agent runs: which of these signals should the agent trust to reach the files that a correct patch edits? We build a localization benchmark from the 129 training tasks, using the files edited by each reference patch as labels, and compare six retrieval strategies: BM25 over the issue text, the symbol named in the issue ("seed"), a two-hop graph expansion from the seed, embedding similarity to the seed, and two rank-fusion hybrids. On the 124 tasks whose gold files exist in the graph, BM25 alone reaches a mean reciprocal rank (MRR) of 0.360 (95% CI 0.295 to 0.428). Adding the graph raises it to 0.386, but the paired difference of +0.026 has a 95% interval of -0.034 to +0.086, so we cannot claim a gain. Graph expansion does beat the bare seed (+0.049, interval +0.017 to +0.082), and embedding similarity is clearly worse than graph expansion (-0.100, interval -0.167 to -0.033). The best signal depends on the repository: BM25 leads on FastAPI (0.389 against 0.218 for the graph), while seeded methods lead on Rich (0.347 and 0.381 against 0.218). A simple per-issue rule that picks a signal matches the fixed fusion exactly, while an oracle that picks the best signal per task would reach 0.544, so headroom exists but is not captured by simple rules. Returning the full text of ten BM25 hits costs about 15,500 tokens, close to half the window. We release the scripts, per-task results, and the figure so that the study can be repeated in one command.
 
 ## 1. Introduction
 
@@ -12,13 +12,7 @@ Resolving a GitHub issue starts with localization: deciding which files and func
 
 The Gemma 4 Developer Agent Competition changes the setting. The agent is a configuration file for a small open model, scored with vLLM at a maximum length of 32,768 tokens, with no internet access. The organizers ship, for each repository snapshot, a code graph and an embedding for every symbol, and they expose three tools over them: a neighbor lookup, a subgraph lookup, and a similarity search. A prompt author must decide how the agent should combine these tools with ordinary text search. The decision matters because every tool result consumes context that the model also needs for reading code and writing a patch.
 
-This paper measures the quality and the token cost of each signal on the competition's own training tasks. Our contributions are as follows.
-
-1. A localization benchmark of 124 issue-to-files tasks with labels derived from reference patches, built only from data that the competition provides.
-2. A comparison of six retrieval strategies with bootstrap confidence intervals and paired tests, including a per-repository breakdown.
-3. Evidence that lexical search is a strong baseline that graph and embedding signals do not significantly improve in aggregate, together with evidence that the best signal differs by repository.
-4. A token-cost analysis that links retrieval choices to the 32,768-token budget.
-5. Open scripts and results that reproduce every number in this paper.
+This paper measures the quality and the token cost of each signal on the competition's own training tasks. Our contributions are a 124-task localization benchmark built only from competition data, a comparison of six strategies with bootstrap intervals and a per-repository breakdown, evidence that lexical search is a strong baseline that is not significantly improved in aggregate, a router and oracle analysis, a token-cost analysis against the 32,768-token budget, and open scripts that reproduce every number.
 
 ## 2. Related Work
 
@@ -40,7 +34,7 @@ For each repository snapshot the competition provides a graph and an embedding f
 
 ### 3.3 Mapping nodes to files
 
-Snapshots are not needed to run the study, so we map nodes to files by module path. For each label file we take the longest dotted suffix of its path that matches at least one node name, and a node belongs to the file if its name equals that module or starts with it followed by a dot. Nodes that match no label file are grouped by their module prefix, so that the ranked list contains distinct files and distinct non-label modules.
+We map nodes to files by module path. For each label file we take the longest dotted suffix of its path that matches at least one node name, and a node belongs to the file if its name equals that module or starts with it followed by a dot. Nodes that match no label file are grouped by their module prefix, so that the ranked list contains distinct files and distinct non-label modules.
 
 ### 3.4 Seeds
 
@@ -100,17 +94,21 @@ On FastAPI, BM25 is far ahead of every seeded method. On Rich, the seed alone (0
 
 ### 4.4 Seeded tasks only
 
-On the 90 tasks with a seed, BM25 reaches an MRR of 0.435, graph expansion 0.417, embedding similarity 0.279, the fusion of all three 0.459, and the fusion of BM25 and graph 0.471. The ordering matches the full set, and the gap between the graph and BM25 narrows when a seed exists. The complete table is in the released results file.
+On the 90 tasks with a seed, BM25 reaches an MRR of 0.435, graph expansion 0.417, embedding similarity 0.279, the fusion of all three 0.459, and the fusion of BM25 and graph 0.471. The ordering matches the full set, and the gap between the graph and BM25 narrows when a seed exists.
 
 ### 4.5 Token cost
 
 The estimated cost of returning the source text of the top ten nodes is about 15,500 tokens for BM25, 10,700 for graph expansion, 6,800 for the seed alone, 3,300 for embedding similarity, and about 16,000 to 19,600 for the hybrids. With a window of 32,768 tokens that must also hold the system prompt, the issue, tool schemas, code that is read, and the patch, a tool that returns ten full nodes can consume nearly half of the budget. A tool design that returns signatures or truncated bodies would change this trade-off, and the competition's tools already cap command and graph output at 5,000 characters, which bounds the worst case.
 
+### 4.6 Does choosing the signal per issue help?
+
+We test the idea with two routers. The rule router uses the BM25 and graph fusion when a seed exists and plain BM25 otherwise. It reaches an MRR of 0.386 (95% CI 0.318 to 0.455), which is identical to the fixed fusion, because without a seed the graph contributes nothing and the fusion reduces to BM25. An oracle router that picks the best of all six methods for each task, using the gold labels, reaches 0.544 (0.473 to 0.616), and an oracle that picks only between BM25 and the fusion reaches 0.465 (0.395 to 0.535). These oracle numbers are upper bounds that no deployed router can reach, but they show that the signals fail on different tasks. A learned or model-based chooser is therefore worth testing, and a seed-existence rule is not enough.
+
 ## 5. Discussion
 
 **What a prompt author should do.** The evidence supports a simple policy for small agents. Start with text search over the issue's identifiers, because it is the strongest and the most robust single signal. When the issue names a symbol that exists in the graph, call the neighbor tool on that symbol, because graph expansion beats the bare seed with a clear margin and costs less context than ten BM25 hits. Treat embedding similarity as a last resort.
 
-**Why aggregate gains are small.** The hybrids rescue some tasks that BM25 misses and demote others that BM25 gets right, and the repository breakdown shows that these effects have opposite signs in different repositories. A fixed fusion rule averages them out. An agent that chooses its signal after reading the issue can in principle do better than any fixed fusion, and we regard this as the most promising direction.
+**Why aggregate gains are small.** The hybrids rescue some tasks that BM25 misses and demote others that BM25 gets right, and the repository breakdown shows that these effects have opposite signs in different repositories. A fixed fusion rule averages them out. Our simple router did not help, but the oracle gap in Section 4.6 shows that an agent that chooses its signal after reading the issue could in principle gain a lot, and we regard this as the most promising direction.
 
 ## 6. Limitations
 
@@ -119,13 +117,13 @@ We state the limits of this study plainly.
 - The benchmark covers 124 tasks from four repositories, and FastAPI and Rich account for 110 of them. The per-repository differences are descriptive and would need more tasks for confirmation.
 - Files are matched through module paths and not through the repository snapshots, so the match can be wrong for unusual layouts.
 - Seeds come from exact name matching in the issue text. A language model may pick better or worse seeds, so our seeded results are an approximation of agent behavior.
-- We measure retrieval quality only. We did not run a language model, and we did not test whether better localization increases the resolution rate of an agent. The final score depends on many other factors.
+- We measure retrieval quality only. We did not run a language model inside the study. For context, our baseline agent configuration scored 0.05 on the public leaderboard, which shows that localization is only one of the factors that decide the resolution rate, and we make no claim that better retrieval raises that score.
 - The tasks are the public training split, and no result here applies to the hidden test tasks.
 - Token costs are estimates based on character counts.
 
 ## 7. Reproducibility
 
-All code is in a public repository at https://github.com/Blackl1stV35/gemma4-agent-localization. The study needs only the competition's task file, the graph files, and the embedding files, plus Python with NumPy and Matplotlib. Running `python paper/study.py` writes the per-task results, the summary tables, and the figure, and running `python paper/analysis.py` writes the confidence intervals, the paired tests, and the per-repository table. Both scripts run on a CPU in under a few minutes. The files `paper/results.json`, `paper/results_table.md`, and `paper/analysis.md` contain the numbers reported here.
+All code is in a public repository at https://github.com/Blackl1stV35/gemma4-agent-localization. The study needs only the competition's task file, the graph files, and the embedding files, plus Python with NumPy and Matplotlib. Running `python paper/study.py` writes the per-task results, the summary tables, and the figure, and running `python paper/analysis.py` and `python paper/router.py` write the confidence intervals, paired tests, per-repository table, and router results. Both scripts run on a CPU in under a few minutes. The files `paper/results.json`, `paper/results_table.md`, and `paper/analysis.md` contain the numbers reported here.
 
 ## 8. Conclusion
 
