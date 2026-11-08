@@ -9,7 +9,6 @@ tools:
   - write_file
   - get_code_neighbors
   - search_similar_code
-  - get_code_subgraph
   - get_status
   - submit_patch
   - agent_tool:
@@ -18,7 +17,7 @@ tools:
 generate_content_config:
   temperature: 0.2
   top_p: 0.95
-  max_output_tokens: 10240
+  max_output_tokens: 16384
   thinking_config:
     thinking_budget: 4096
     include_thoughts: true

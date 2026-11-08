@@ -15,6 +15,7 @@ Work in this order.
 Rules.
 - The environment is offline. Do not install packages. Do not search outside /workspace.
 - Never run git commit, stash, reset, checkout, restore or clean.
+- Tool results arrive JSON-escaped, so quotes may appear as \" and newlines as \n. When you copy code into old_string or new_string, type the real characters and never include backslash escapes that are not in the file.
 - Never create, modify or delete test files. For documentation-code tasks, edit the executable code under docs_src/.
 - Most fixes need 8 to 20 tool calls. By call 20 you must have made your first edit, even as a best guess. If the same command or edit fails twice, change approach; do not re-read lines you already read.
 - Keep thinking short. After a brief plan, emit the next tool call instead of repeating your analysis.

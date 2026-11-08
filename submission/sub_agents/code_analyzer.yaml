@@ -19,10 +19,9 @@ tools:
   - run_command
   - get_code_neighbors
   - search_similar_code
-  - get_code_subgraph
 generate_content_config:
   temperature: 0.1
-  max_output_tokens: 4096
+  max_output_tokens: 8192
   thinking_config:
-    thinking_budget: 1024
+    thinking_budget: 2048
     include_thoughts: true
