@@ -1,4 +1,4 @@
-# Lexical Search Is Hard to Beat: Seeded Graph and Embedding Signals for Issue Localization by Small Offline Coding Agents
+﻿# Lexical Search Is Hard to Beat: Seeded Graph and Embedding Signals for Issue Localization by Small Offline Coding Agents
 
 *Subtitle: A reproducible study on the code graphs and embeddings shipped with the Gemma 4 Developer Agent Competition*
 
@@ -123,7 +123,7 @@ We state the limits of this study plainly.
 
 ## 7. Reproducibility
 
-All code is in a public repository at https://github.com/Blackl1stV35/gemma4-agent-localization. The study needs only the competition's task file, the graph files, and the embedding files, plus Python with NumPy and Matplotlib. Running `python paper/study.py` writes the per-task results, the summary tables, and the figure, and running `python paper/analysis.py` and `python paper/router.py` write the confidence intervals, paired tests, per-repository table, and router results. Both scripts run on a CPU in under a few minutes. The files `paper/results.json`, `paper/results_table.md`, and `paper/analysis.md` contain the numbers reported here.
+All code is in a public repository at https://github.com/Blackl1stV35/gemma4-agent-localization. The study needs only the competition's task file, the graph files, and the embedding files, plus Python with NumPy and Matplotlib. Running `python paper/study.py` writes the per-task results, the summary tables, and the figure, and running `python paper/analysis.py` and `python paper/router.py` write the confidence intervals, paired tests, per-repository table, and router results. All scripts run on a CPU in under a few minutes. The files `paper/results.json`, `paper/results_table.md`, and `paper/analysis.md` contain the numbers reported here.
 
 ## 8. Conclusion
 
